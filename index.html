@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spice Box Co. | Nine Compartments, One Closed Lid</title>
+<meta name="description" content="An Indo-Thai hospitality concept. Nine compartments, one closed lid. Enter the Spice Box.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Concept: a cinematic front door. A Thai-roofed masala box with nine spice compartments sits beside high-contrast Bodoni type; one saffron-and-espresso CTA leads the eye to the live site. */
+:root {
+  --bg: #F3EADB;
+  --bg-2: #EADFCB;
+  --fg: #2A1A12;
+  --fg-soft: #5E4A3C;
+  --line: #CDBBA0;
+  --jade: #2F6B5E;
+  --teal-deep: #0F3B3E;
+  --saffron: #E0A026;
+  --terracotta: #B8553A;
+  --burnt: #C8661E;
+  --olive: #6B6B3A;
+  --gold: #B39255;
+  --wood: #3A2418;
+  --ivory: #F7EFE0;
+  --espresso: #2A1A12;
+  --band-bg: #2A1A12;
+  --band-fg: #F7EFE0;
+  --btn-bg: #2A1A12;
+  --btn-fg: #F7EFE0;
+  --btn-accent: #E0A026;
+  --btn-hover-bg: #0F3B3E;
+  --accent-text: #A8472D;
+  --c1: #B8553A; --c2: #6B6B3A; --c3: #C8661E; --c4: #2F6B5E; --c5: #12484C;
+  --c6: #E0A026; --c7: #B39255; --c8: #7C9A8A; --c9: #8A3B2A;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #181009; --bg-2: #22160E; --fg: #F3EADB; --fg-soft: #CBB9A0; --line: #4A3526;
+    --band-bg: #26180F; --band-fg: #F7EFE0;
+    --btn-bg: #E0A026; --btn-fg: #2A1A12; --btn-accent: #2A1A12; --btn-hover-bg: #F7EFE0;
+    --accent-text: #E8A062; --jade: #5FA896;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #181009; --bg-2: #22160E; --fg: #F3EADB; --fg-soft: #CBB9A0; --line: #4A3526;
+  --band-bg: #26180F; --band-fg: #F7EFE0;
+  --btn-bg: #E0A026; --btn-fg: #2A1A12; --btn-accent: #2A1A12; --btn-hover-bg: #F7EFE0;
+  --accent-text: #E8A062; --jade: #5FA896;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--body); font-size: 17px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--saffron); outline-offset: 4px; }
+.wrap { max-width: 1240px; margin: 0 auto; }
+.eyebrow { font-size: .78rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-text); }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; margin: 0; text-wrap: balance; line-height: 1.02; }
+
+/* NAV */
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 18px; }
+.logo { font-family: var(--display); font-weight: 700; letter-spacing: .12em; font-size: 1rem; text-decoration: none; white-space: nowrap; }
+.nav-link {
+  font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; text-decoration: none;
+  padding: 12px 16px; border: 1.5px solid var(--fg); border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px;
+  transition: background .3s, color .3s;
+}
+.nav-link:hover { background: var(--fg); color: var(--bg); }
+
+/* BUTTONS */
+.cta {
+  --glow: rgba(224,160,38,.0);
+  display: inline-flex; align-items: center; gap: 18px; text-decoration: none;
+  background: var(--btn-bg); color: var(--btn-fg);
+  font-family: var(--body); font-weight: 700; font-size: clamp(1rem, 3.8vw, 1.2rem); letter-spacing: .14em; text-transform: uppercase;
+  padding: 22px 30px; min-height: 64px; border-radius: 4px;
+  box-shadow: 0 0 0 0 var(--glow);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), background .35s, color .35s, box-shadow .35s;
+}
+.cta .arrow { display: inline-block; font-size: 1.5em; line-height: 1; color: var(--btn-accent); transition: transform .35s cubic-bezier(.2,.7,.2,1), color .35s; }
+.cta:hover, .cta:focus-visible { transform: scale(1.03); background: var(--btn-hover-bg); color: var(--ivory); --glow: rgba(224,160,38,.5); box-shadow: 0 10px 40px 0 rgba(224,160,38,.35); }
+.cta:hover .arrow, .cta:focus-visible .arrow { transform: translateX(8px); color: var(--saffron); }
+:root[data-theme="dark"] .cta:hover { color: var(--espresso); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cta:hover, :root:not([data-theme="light"]) .cta:focus-visible { color: var(--espresso); } :root:not([data-theme="light"]) .cta:hover .arrow { color: var(--terracotta); } }
+:root[data-theme="dark"] .cta:hover .arrow { color: var(--terracotta); }
+.cta-final { --btn-bg: #2A1A12; --btn-fg: #F7EFE0; --btn-accent: #E0A026; }
+.cta-final:hover { background: #0F3B3E; color: #F7EFE0; }
+.cta-final:hover .arrow { color: #E0A026; }
+.link2 {
+  font-size: .82rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; text-decoration: none;
+  padding: 14px 4px; min-height: 48px; display: inline-flex; align-items: center; gap: 10px;
+  border-bottom: 1.5px solid currentColor; color: var(--fg);
+}
+.link2 .arrow { transition: transform .3s; }
+.link2:hover .arrow { transform: translateX(6px); }
+
+/* HERO */
+.hero { display: grid; grid-template-columns: 1fr; gap: 28px; padding-block: 24px 64px; align-items: center; }
+.hero-copy { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; min-width: 0; }
+.hero h1 { font-size: clamp(3rem, 13.5vw, 7.6rem); font-weight: 700; letter-spacing: -.015em; line-height: .92; }
+.hero h1 .co { font-style: italic; font-weight: 500; color: var(--terracotta); }
+.tagline { font-family: var(--display); font-style: italic; font-size: clamp(1.35rem, 5vw, 2.1rem); line-height: 1.2; }
+.support { color: var(--fg-soft); max-width: 34ch; margin: 0; }
+.hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 6px; width: 100%; }
+.hero-actions .cta { width: 100%; justify-content: space-between; }
+.hero-visual { position: relative; justify-self: center; width: min(100%, 520px); will-change: transform; }
+.hero-visual svg { display: block; width: 100%; height: auto; }
+#motes { position: absolute; inset: -4% -4% 0; width: 108%; height: 104%; pointer-events: none; }
+.lid { animation: lidfloat 7s ease-in-out infinite; transform-origin: 50% 100%; }
+@keyframes lidfloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.rise { animation: rise 1s cubic-bezier(.2,.7,.2,1) backwards; }
+.rise.d1 { animation-delay: .08s; } .rise.d2 { animation-delay: .2s; } .rise.d3 { animation-delay: .32s; } .rise.d4 { animation-delay: .44s; }
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+/* STORY */
+.band { background: var(--band-bg); color: var(--band-fg); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+.story { display: grid; gap: 28px; padding-block: 72px; }
+.story h2 { font-size: clamp(2.4rem, 8vw, 4.6rem); letter-spacing: .01em; }
+.story .lead { font-family: var(--display); font-style: italic; font-size: clamp(1.4rem, 4vw, 2rem); color: var(--saffron); margin: 0; }
+.story p { margin: 0; max-width: 52ch; color: #E4D6BF; }
+.motto { font-family: var(--display); font-weight: 700; font-size: clamp(2.2rem, 9vw, 6rem); line-height: .98; letter-spacing: -.01em; padding-bottom: 72px; margin: 0; }
+.motto span { display: block; }
+.motto .b { font-style: italic; font-weight: 500; color: var(--saffron); }
+
+/* NINE */
+.nine { padding-block: 84px; display: grid; gap: 36px; }
+.nine h2 { font-size: clamp(2.2rem, 7vw, 4.2rem); }
+.nine .intro { color: var(--fg-soft); max-width: 40ch; margin: 14px 0 0; }
+.box-frame { background: var(--wood); padding: 12px; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(224,160,38,.35); max-width: 560px; width: 100%; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.cell {
+  appearance: none; border: 0; cursor: pointer; font: inherit; color: #F3E6CF;
+  background: #4A2F20; border-radius: 3px; padding: 14px 6px 12px; min-height: 108px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  transition: background .3s, transform .3s;
+}
+.cell:hover, .cell[aria-pressed="true"] { background: #5A3A28; transform: translateY(-3px); }
+.cell .spice { width: clamp(38px, 11vw, 58px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--c) 70%, #fff) 0%, var(--c) 55%, color-mix(in srgb, var(--c) 70%, #000) 100%); box-shadow: inset 0 -3px 6px rgba(0,0,0,.35), 0 0 0 3px #2A1A12; transition: box-shadow .3s; }
+.cell[aria-pressed="true"] .spice { box-shadow: inset 0 -3px 6px rgba(0,0,0,.35), 0 0 0 3px #2A1A12, 0 0 0 5px var(--saffron); }
+.cell .lbl { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; text-align: center; line-height: 1.25; }
+.detail { border-top: 1.5px solid var(--fg); padding-top: 20px; min-height: 170px; max-width: 560px; }
+.detail .k { margin: 0 0 6px; }
+.detail h3 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin-bottom: 8px; }
+.detail p { margin: 0; font-family: var(--display); font-style: italic; font-size: 1.4rem; color: var(--fg-soft); }
+
+/* SIAM */
+.siam { background: var(--teal-deep); color: #F2EBDC; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); position: relative; overflow: hidden; }
+.siam-in { display: grid; gap: 28px; padding-block: 88px; position: relative; z-index: 1; }
+.siam .eyebrow { color: #E9B656; }
+.siam h2 { font-size: clamp(2.6rem, 10vw, 6rem); font-weight: 700; }
+.siam h2 em { font-weight: 500; }
+.siam p { margin: 0; max-width: 40ch; font-family: var(--display); font-style: italic; font-size: clamp(1.25rem, 3.6vw, 1.8rem); color: #CFE2D8; }
+.siam .link2 { color: #F2EBDC; align-self: start; width: fit-content; }
+.siam-art { position: absolute; right: -4%; bottom: 0; width: min(70%, 520px); opacity: .5; pointer-events: none; }
+
+/* FINAL */
+.final { background: var(--saffron); color: #2A1A12; margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+.final-in { padding-block: 96px 88px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.final h2 { font-size: clamp(2.8rem, 12vw, 8.4rem); font-weight: 700; letter-spacing: -.015em; line-height: .94; }
+.final .tag { font-family: var(--display); font-style: italic; font-size: clamp(1.3rem, 4vw, 2rem); margin: 0; }
+.final .cta { width: 100%; justify-content: space-between; margin-top: 10px; }
+.foot { padding-block: 28px max(28px, env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: .82rem; color: var(--fg-soft); }
+
+@media (min-width: 860px) {
+  body { font-size: 18px; }
+  .hero { grid-template-columns: 1.15fr .85fr; gap: 48px; padding-block: 40px 96px; }
+  .hero-actions { flex-direction: row; align-items: center; gap: 28px; width: auto; }
+  .hero-actions .cta { width: auto; }
+  .story { grid-template-columns: 1fr 1.1fr; gap: 64px; padding-block: 110px 56px; align-items: start; }
+  .nine { grid-template-columns: 1fr 1.05fr; gap: 72px; align-items: center; padding-block: 120px; }
+  .nine-text { display: grid; gap: 36px; }
+  .siam-in { padding-block: 130px; }
+  .final-in .cta { width: auto; }
+  .final-in { padding-block: 130px 120px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lid, .rise { animation: none; }
+  .cta, .cell { transition: none; }
+}
+
+html { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="https://spiceboxco.vercel.app/" aria-label="Spice Box Co. main website">SPICE BOX CO.</a>
+    <a class="nav-link" href="https://spiceboxco.vercel.app/">Enter the experience <span aria-hidden="true">→</span></a>
+  </header>
+
+  <section class="hero" aria-labelledby="brand">
+    <div class="hero-copy">
+      <span class="eyebrow rise d1">Indo-Thai Hospitality</span>
+      <h1 id="brand" class="rise d2">SPICE BOX <span class="co">CO.</span></h1>
+      <div class="tagline rise d3">Nine Compartments, One Closed Lid</div>
+      <p class="support rise d3">Distinct flavours. Different roots. One complete experience.</p>
+      <div class="hero-actions rise d4">
+        <a class="cta" href="https://spiceboxco.vercel.app/">Enter the Spice Box <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="link2" href="https://spiceboxco.vercel.app/">Explore the full experience <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <canvas id="motes" aria-hidden="true"></canvas>
+      <svg viewBox="0 0 520 580" role="img" aria-label="An Indian masala box with nine spice compartments, topped with a lid shaped like a tiered Thai temple roof">
+        <g class="lid">
+          <g fill="#0F3B3E">
+            <path d="M40 190 Q120 186 170 140 L350 140 Q400 186 480 190 Q400 200 350 196 L170 196 Q120 200 40 190Z"/>
+            <path d="M110 140 Q170 136 205 96 L315 96 Q350 136 410 140 Q350 148 315 144 L205 144 Q170 148 110 140Z"/>
+            <path d="M175 96 Q215 92 238 56 L282 56 Q305 92 345 96 Q305 102 282 98 L238 98 Q215 102 175 96Z"/>
+          </g>
+          <g fill="#2F6B5E">
+            <rect x="196" y="144" width="128" height="52" rx="1"/>
+            <rect x="226" y="98" width="68" height="42" rx="1"/>
+          </g>
+          <g fill="#E0A026">
+            <path d="M260 8 L266 40 L262 58 L258 58 L254 40Z"/>
+            <rect x="196" y="190" width="128" height="6"/>
+            <rect x="226" y="136" width="68" height="4"/>
+            <path d="M40 190 Q60 178 62 168 Q58 184 70 190Z"/>
+            <path d="M480 190 Q460 178 458 168 Q462 184 450 190Z"/>
+          </g>
+          <g fill="#F7EFE0" opacity=".85">
+            <rect x="214" y="156" width="10" height="34"/><rect x="236" y="156" width="10" height="34"/><rect x="274" y="156" width="10" height="34"/><rect x="296" y="156" width="10" height="34"/>
+          </g>
+        </g>
+        <rect x="52" y="214" width="416" height="340" rx="6" fill="#3A2418"/>
+        <rect x="52" y="214" width="416" height="340" rx="6" fill="none" stroke="#B39255" stroke-width="1.5" opacity=".6"/>
+        <rect x="64" y="226" width="392" height="316" rx="3" fill="#2A1A12"/>
+        <g stroke="#4A2F20" stroke-width="6">
+          <line x1="195" y1="226" x2="195" y2="542"/><line x1="325" y1="226" x2="325" y2="542"/>
+          <line x1="64" y1="331" x2="456" y2="331"/><line x1="64" y1="437" x2="456" y2="437"/>
+        </g>
+        <g>
+          <circle cx="130" cy="278" r="42" fill="var(--c1)"/><circle cx="260" cy="278" r="42" fill="var(--c2)"/><circle cx="390" cy="278" r="42" fill="var(--c3)"/>
+          <circle cx="130" cy="384" r="42" fill="var(--c4)"/><circle cx="260" cy="384" r="42" fill="var(--c5)"/><circle cx="390" cy="384" r="42" fill="var(--c6)"/>
+          <circle cx="130" cy="490" r="42" fill="var(--c7)"/><circle cx="260" cy="490" r="42" fill="var(--c8)"/><circle cx="390" cy="490" r="42" fill="var(--c9)"/>
+        </g>
+        <g fill="#fff" opacity=".18">
+          <circle cx="116" cy="264" r="12"/><circle cx="246" cy="264" r="12"/><circle cx="376" cy="264" r="12"/>
+          <circle cx="116" cy="370" r="12"/><circle cx="246" cy="370" r="12"/><circle cx="376" cy="370" r="12"/>
+          <circle cx="116" cy="476" r="12"/><circle cx="246" cy="476" r="12"/><circle cx="376" cy="476" r="12"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+</div>
+
+<section class="band" aria-labelledby="box-h">
+  <div class="wrap">
+    <div class="story">
+      <div>
+        <span class="eyebrow" style="color:var(--saffron)">The Idea</span>
+        <h2 id="box-h" style="margin-top:14px">THE BOX</h2>
+      </div>
+      <div style="display:grid;gap:18px">
+        <p class="lead">Multiple identities. One experience.</p>
+        <p>In an Indian kitchen the masala box keeps each spice in its own compartment so it stays true. Close the lid and it becomes one object, ready for any dish. Spice Box Co. is built the same way: distinct culinary influences, each curated on its own terms, brought together under one lid.</p>
+      </div>
+    </div>
+    <p class="motto"><span>SEPARATELY CURATED.</span><span class="b">TOGETHER COMPLETE.</span></p>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="nine" aria-labelledby="nine-h">
+    <div class="nine-text">
+      <div>
+        <span class="eyebrow">What is inside</span>
+        <h2 id="nine-h" style="margin-top:14px">Lift the lid on nine compartments</h2>
+        <p class="intro">Four Indian regions, a Thai-inspired house and four principles of wellness hospitality. Tap a compartment.</p>
+      </div>
+      <div class="detail" id="detail" aria-live="polite">
+        <p class="eyebrow k" id="dk">Region</p>
+        <h3 id="dn">Delhi</h3>
+        <p id="dp">Bold aromatic traditions.</p>
+      </div>
+    </div>
+    <div class="box-frame">
+      <div class="grid" id="grid" role="group" aria-label="Nine compartments of the Spice Box"></div>
+    </div>
+  </section>
+</div>
+
+<section class="siam" aria-labelledby="siam-h">
+  <svg class="siam-art" viewBox="0 0 520 300" aria-hidden="true">
+    <g fill="#2F6B5E">
+      <path d="M20 300 L20 262 Q110 256 160 214 L360 214 Q410 256 500 262 L500 300Z"/>
+      <path d="M130 214 Q190 210 225 168 L295 168 Q330 210 390 214Z"/>
+      <path d="M200 168 Q235 164 250 126 L270 126 Q285 164 320 168Z"/>
+      <rect x="258" y="70" width="4" height="58"/>
+    </g>
+    <g fill="#5FA896" opacity=".7">
+      <path d="M40 300 Q30 240 80 210 Q70 260 90 300Z"/><path d="M80 300 Q90 230 140 200 Q120 250 120 300Z"/>
+      <path d="M480 300 Q490 240 440 210 Q450 260 430 300Z"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="siam-in">
+      <span class="eyebrow">A concept within Spice Box Co.</span>
+      <h2 id="siam-h"><em>Siam</em> Spice House</h2>
+      <p>An Indo-Thai expression of the Spice Box experience.</p>
+      <a class="link2" href="https://spiceboxco.vercel.app/#siam">Discover Siam Spice House <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="final-h">
+  <div class="wrap">
+    <div class="final-in">
+      <h2 id="final-h">READY TO OPEN THE BOX?</h2>
+      <p class="tag">Nine Compartments, One Closed Lid.</p>
+      <a class="cta cta-final" href="https://spiceboxco.vercel.app/">Enter the Spice Box <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer class="foot">
+    <span>SPICE BOX CO.</span>
+    <span>Siam Spice House is a concept within Spice Box Co.</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var data = [
+    ["Delhi", "Region", "Bold aromatic traditions."],
+    ["Mizoram", "Region", "Clean, earthy profiles."],
+    ["Bengal", "Region", "Complex depth of flavor."],
+    ["Kerala", "Region", "Vibrant tropical freshness."],
+    ["Siam Spice House", "Thai-inspired house", "Sour, sweet, salty and hot, in equilibrium."],
+    ["Mastery-Driven Purity", "Wellness", "Unadulterated ingredient execution."],
+    ["Ergonomic Architecture", "Wellness", "Biophilic physical comfort."],
+    ["Sensory Decompression", "Wellness", "Pristine environmental control."],
+    ["Paced Dining", "Wellness", "Insulated spatial privacy."]
+  ];
+  var grid = document.getElementById("grid");
+  var dk = document.getElementById("dk"), dn = document.getElementById("dn"), dp = document.getElementById("dp");
+  var cells = [];
+  function select(i) {
+    cells.forEach(function (c, j) { c.setAttribute("aria-pressed", j === i ? "true" : "false"); });
+    dk.textContent = data[i][1]; dn.textContent = data[i][0]; dp.textContent = data[i][2];
+  }
+  data.forEach(function (d, i) {
+    var b = document.createElement("button");
+    b.className = "cell"; b.type = "button"; b.setAttribute("aria-pressed", "false");
+    b.style.setProperty("--c", "var(--c" + (i + 1) + ")");
+    b.innerHTML = '<span class="spice"></span><span class="lbl">' + d[0] + "</span>";
+    b.addEventListener("click", function () { select(i); });
+    b.addEventListener("mouseenter", function () { select(i); });
+    b.addEventListener("focus", function () { select(i); });
+    grid.appendChild(b); cells.push(b);
+  });
+  select(0);
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+
+  var hv = document.getElementById("heroVisual");
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () {
+      var y = Math.min(window.scrollY, 900);
+      hv.style.transform = "translate3d(0," + (y * 0.07).toFixed(1) + "px,0)";
+      ticking = false;
+    });
+  }, { passive: true });
+
+  var cv = document.getElementById("motes");
+  var ctx = cv.getContext && cv.getContext("2d");
+  if (!ctx) return;
+  var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var cols = ["#E0A026", "#C8661E", "#B8553A", "#B39255"];
+  var ps = [];
+  function size() {
+    var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  size(); window.addEventListener("resize", size);
+  for (var i = 0; i < 26; i++) ps.push({ x: Math.random(), y: Math.random(), r: 0.8 + Math.random() * 2.2, s: 0.015 + Math.random() * 0.03, d: Math.random() * 6.28, c: cols[i % 4], a: 0.25 + Math.random() * 0.45 });
+  var vis = true;
+  new IntersectionObserver(function (e) { vis = e[0].isIntersecting; }).observe(cv);
+  function frame(t) {
+    if (vis) {
+      ctx.clearRect(0, 0, W, H);
+      for (var k = 0; k < ps.length; k++) {
+        var p = ps[k];
+        p.y -= p.s * 0.004; if (p.y < -0.05) { p.y = 1.05; p.x = Math.random(); }
+        var x = (p.x + Math.sin(t / 2400 + p.d) * 0.02) * W, y = p.y * H;
+        ctx.globalAlpha = p.a; ctx.fillStyle = p.c;
+        ctx.beginPath(); ctx.arc(x, y, p.r, 0, 6.283); ctx.fill();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
